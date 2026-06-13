@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Cup 2026 Sweepstake</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="badge26">26</span>
+    <div>
+      <h1>The Sweepstake</h1>
+      <p class="sub">World Cup 2026 · USA Canada México</p>
+    </div>
+  </div>
+  <div class="actions">
+    <button id="edit-toggle" class="btn">Edit scores</button>
+    <button id="share" class="btn gold">Share</button>
+  </div>
+</header>
+
+<div class="ticker" id="ticker" aria-label="Latest results and upcoming kick-offs"></div>
+
+<nav class="tabs">
+  <button class="tab active" data-tab="leaderboard">Table</button>
+  <button class="tab" data-tab="teams">Teams</button>
+  <button class="tab" data-tab="groups">Groups</button>
+  <button class="tab" data-tab="fixtures">Matches</button>
+  <button class="tab" data-tab="bracket">Bracket</button>
+  <button class="tab" data-tab="setup">Setup</button>
+</nav>
+
+<main id="view"></main>
+
+<div id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
