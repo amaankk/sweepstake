@@ -177,11 +177,10 @@ window.WC_DATA = {
   seedResults: {
     1: [2,0],   // Mexico 2-0 South Africa
     2: [2,1],   // South Korea 2-1 Czechia
+    7: [1,1],   // Canada 1-1 Bosnia & Herzegovina
+    19: [4,1],  // USA 4-1 Paraguay
   },
 
-  // Optional baked-in setup (player names / team assignments). The in-app
-  // Setup tab overrides these locally; once you finalise your draw you can
-  // bake it in here so every visitor sees it by default.
-  seedPlayers: null,      // e.g. ["Amaan","Sam","Jo","Alex","Max","Kit"]
-  seedAssignments: null,  // e.g. { MEX:0, BRA:1, ... }  (team id -> player index)
+  seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],
+  seedAssignments: {"MEX":1,"RSA":4,"KOR":2,"CZE":0,"CAN":0,"BIH":4,"QAT":0,"SUI":1,"BRA":4,"MAR":5,"HAI":0,"SCO":2,"USA":3,"PAR":1,"AUS":0,"TUR":2,"GER":3,"CUW":5,"CIV":1,"ECU":3,"NED":5,"JPN":1,"SWE":2,"TUN":4,"BEL":5,"EGY":0,"IRN":0,"NZL":3,"ESP":4,"CPV":3,"KSA":1,"URU":3,"FRA":3,"SEN":2,"IRQ":3,"NOR":1,"ARG":4,"ALG":5,"AUT":4,"JOR":2,"POR":2,"COD":5,"UZB":5,"COL":1,"ENG":5,"CRO":2,"GHA":0,"PAN":4},
 };
