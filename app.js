@@ -211,16 +211,21 @@
   }
 
   function teamScore(teamId, prog) {
-    let wins = 0;
+    let wins = 0, draws = 0;
     MATCHES.forEach(mt => {
-      if (winnerOf(mt.id) === teamId) wins++;
+      if (winnerOf(mt.id) === teamId) { wins++; return; }
+      const r = getResult(mt.id);
+      if (!r) return;
+      // draws only apply in the group stage (knockout ties eventually have a winner)
+      if (mt.stage === "group" && r[0] === r[1] && (mt.home === teamId || mt.away === teamId)) draws++;
     });
     let stagePts = 0;
     const stages = [];
     STAGE_POINTS.forEach(([key, pts]) => {
       if (prog[teamId][key]) { stagePts += pts; stages.push(key); }
     });
-    return { wins, stagePts, stages, total: wins + stagePts };
+    const total = wins + draws * 0.5 + stagePts;
+    return { wins, draws, stagePts, stages, total };
   }
 
   function computeAll() {
@@ -306,7 +311,7 @@
       const rows = teams.map(t => {
         const sc = teamScores[t.id];
         const out = isOut(t.id) ? " out" : "";
-        return `<tr class="trow${out}"><td>${teamChip(t.id)}</td><td>${sc.wins}</td><td>${sc.stagePts}</td><td class="num">${sc.total}</td></tr>`;
+        return `<tr class="trow${out}"><td>${teamChip(t.id)}</td><td>${sc.wins}${sc.draws ? `<span class="draw-pts"> +${sc.draws}D</span>` : ""}</td><td>${sc.stagePts}</td><td class="num">${sc.total}</td></tr>`;
       }).join("");
       const alive = p.teams.filter(t => !isOut(t.id)).length;
       return `<details class="brow${idx === 0 ? " leader" : ""}" ${idx === 0 ? "open" : ""}>
@@ -314,7 +319,7 @@
           <span class="rank">${idx + 1}</span>
           <span class="pcol" style="--pc:${PLAYER_COLORS[p.i]}"></span>
           <span class="pname">${esc(p.name)}</span>
-          <span class="pstats">${p.wins}W · ${p.stagePts} stage pts<br>${alive}/8 teams alive</span>
+          <span class="pstats">${p.wins}W · ${p.teams.reduce((s,t)=>s+teamScores[t.id].draws,0)}D · ${p.stagePts} stage<br>${alive}/8 alive</span>
           <span class="ptotal">${p.total}</span>
         </summary>
         <div class="breakdown">
@@ -322,7 +327,7 @@
         </div>
       </details>`;
     }).join("") + `</div>
-    <p class="note">Scoring: +1 per win (shootout wins count) · reaching R32 +2 · R16 +3 · QF +4 · SF +5 · Final +7 · Champions +10 (cumulative).</p>`;
+    <p class="note">Scoring: +1 per win (shootout wins count) · +0.5 per draw (group stage) · reaching R32 +2 · R16 +3 · QF +4 · SF +5 · Final +7 · Champions +10 (cumulative).</p>`;
   }
 
   function isOut(teamId) {

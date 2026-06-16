@@ -282,6 +282,7 @@ select:focus { outline: 2px solid var(--volt); outline-offset: -1px; }
 .assign-row:first-of-type { border-top: none; }
 .setup .cards { margin-top: 14px; }
 
+.draw-pts { color: var(--muted); font-size: 12px; font-weight: 500; margin-left: 3px; }
 .note { color: var(--muted); font-size: 13px; margin-top: 20px; line-height: 1.55; max-width: 72ch; }
 .empty { color: var(--muted); padding: 56px 10px; text-align: center; font-size: 16px; }
 .empty a { color: var(--volt); font-weight: 600; }
