@@ -175,10 +175,22 @@ window.WC_DATA = {
   // local edits). Format: matchId: [homeGoals, awayGoals] or
   // [homeGoals, awayGoals, "h"|"a"] when a knockout tie went to penalties.
   seedResults: {
-    1: [2,0],   // Mexico 2-0 South Africa
-    2: [2,1],   // South Korea 2-1 Czechia
-    7: [1,1],   // Canada 1-1 Bosnia & Herzegovina
+    1:  [2,0],  // Mexico 2-0 South Africa
+    2:  [2,1],  // South Korea 2-1 Czechia
+    7:  [1,1],  // Canada 1-1 Bosnia & Herzegovina
+    8:  [1,1],  // Qatar 1-1 Switzerland
+    13: [1,1],  // Brazil 1-1 Morocco
+    14: [0,1],  // Haiti 0-1 Scotland
     19: [4,1],  // USA 4-1 Paraguay
+    20: [2,0],  // Australia 2-0 Turkey
+    25: [7,1],  // Germany 7-1 Curaçao
+    26: [1,0],  // Ivory Coast 1-0 Ecuador
+    31: [2,2],  // Netherlands 2-2 Japan
+    32: [5,1],  // Sweden 5-1 Tunisia
+    37: [1,1],  // Belgium 1-1 Egypt
+    38: [2,2],  // Iran 2-2 New Zealand
+    43: [0,0],  // Spain 0-0 Cape Verde
+    44: [1,1],  // Saudi Arabia 1-1 Uruguay
   },
 
   seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],
