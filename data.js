@@ -191,6 +191,22 @@ window.WC_DATA = {
     38: [2,2],  // Iran 2-2 New Zealand
     43: [0,0],  // Spain 0-0 Cape Verde
     44: [1,1],  // Saudi Arabia 1-1 Uruguay
+    49: [3,1],  // France 3-1 Senegal
+    50: [1,4],  // Iraq 1-4 Norway
+    55: [3,0],  // Argentina 3-0 Algeria
+    56: [3,1],  // Austria 3-1 Jordan
+    61: [1,1],  // Portugal 1-1 DR Congo
+    62: [1,3],  // Uzbekistan 1-3 Colombia
+    67: [4,2],  // England 4-2 Croatia
+    68: [1,0],  // Ghana 1-0 Panama
+     3: [1,1],  // Czechia 1-1 South Africa
+     9: [4,1],  // Switzerland 4-1 Bosnia & Herzegovina
+    10: [6,0],  // Canada 6-0 Qatar
+     4: [1,0],  // Mexico 1-0 South Korea
+    15: [0,1],  // Scotland 0-1 Morocco
+    16: [3,0],  // Brazil 3-0 Haiti
+    21: [2,0],  // USA 2-0 Australia
+    22: [0,1],  // Turkey 0-1 Paraguay
   },
 
   seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],
