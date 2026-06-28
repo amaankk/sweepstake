@@ -223,6 +223,32 @@ window.WC_DATA = {
     64: [1,0],  // Colombia 1-0 DR Congo
     69: [0,0],  // England 0-0 Ghana
     70: [0,1],  // Panama 0-1 Croatia
+
+    // Final group matchday (Jun 24-27)
+    11: [2,1],  // Switzerland 2-1 Canada
+    12: [3,1],  // Bosnia & Herzegovina 3-1 Qatar
+    17: [0,3],  // Scotland 0-3 Brazil
+    18: [4,2],  // Morocco 4-2 Haiti
+     5: [0,3],  // Czechia 0-3 Mexico
+     6: [1,0],  // South Africa 1-0 South Korea
+    23: [3,2],  // Turkey 3-2 USA
+    24: [0,0],  // Paraguay 0-0 Australia
+    29: [0,2],  // Curaçao 0-2 Ivory Coast
+    30: [2,1],  // Ecuador 2-1 Germany
+    35: [1,1],  // Japan 1-1 Sweden
+    36: [1,3],  // Tunisia 1-3 Netherlands
+    41: [1,1],  // Egypt 1-1 Iran
+    42: [1,5],  // New Zealand 1-5 Belgium
+    47: [0,0],  // Cape Verde 0-0 Saudi Arabia
+    48: [0,1],  // Uruguay 0-1 Spain
+    53: [1,4],  // Norway 1-4 France
+    54: [5,0],  // Senegal 5-0 Iraq
+    59: [3,3],  // Algeria 3-3 Austria
+    60: [1,3],  // Jordan 1-3 Argentina
+    65: [0,0],  // Colombia 0-0 Portugal
+    66: [3,1],  // DR Congo 3-1 Uzbekistan
+    71: [0,2],  // Panama 0-2 England
+    72: [2,1],  // Croatia 2-1 Ghana
   },
 
   seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],

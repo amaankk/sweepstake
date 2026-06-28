@@ -155,7 +155,18 @@
       if (!groupComplete(g)) return null;
       return standings(g)[Number(m[1]) - 1].id;
     }
-    if (src.startsWith("3:")) return null; // FIFA chart decides — pick manually
+    if (src.startsWith("3:")) {
+      // Auto-resolve: find the qualifying third-place team from the listed groups
+      if (!allGroupsComplete()) return null;
+      const qualifiedIds = thirdPlaceTable().slice(0, 8).map(t => t.row.id);
+      const groups = src.slice(2).split("");
+      for (const g of groups) {
+        const s = standings(g);
+        if (s.length < 3) continue;
+        if (qualifiedIds.includes(s[2].id)) return s[2].id;
+      }
+      return null;
+    }
     if ((m = src.match(/^W(\d+)$/))) return winnerOf(Number(m[1]));
     if ((m = src.match(/^L(\d+)$/))) return loserOf(Number(m[1]));
     return null;
