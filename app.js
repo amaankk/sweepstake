@@ -39,7 +39,7 @@
       players: D.seedPlayers ? [...D.seedPlayers] : Array.from({ length: NUM_PLAYERS }, (_, i) => "Player " + (i + 1)),
       assignments: D.seedAssignments ? { ...D.seedAssignments } : {},
       results: {},   // matchId -> [h, a] or [h, a, "h"|"a"]
-      slots: {},     // matchId -> { h: teamId, a: teamId } manual knockout picks
+      slots: D.seedSlots ? JSON.parse(JSON.stringify(D.seedSlots)) : {}, // matchId -> { h, a }
     };
   }
 
@@ -48,7 +48,8 @@
       const raw = localStorage.getItem(LS_KEY);
       if (raw) {
         const s = JSON.parse(raw);
-        state = { ...defaultState(), ...s };
+        const def = defaultState();
+        state = { ...def, ...s, slots: { ...def.slots, ...(s.slots || {}) } };
       }
     } catch (e) { /* corrupted state -> defaults */ }
     importFromHash();
@@ -155,18 +156,7 @@
       if (!groupComplete(g)) return null;
       return standings(g)[Number(m[1]) - 1].id;
     }
-    if (src.startsWith("3:")) {
-      // Auto-resolve: find the qualifying third-place team from the listed groups
-      if (!allGroupsComplete()) return null;
-      const qualifiedIds = thirdPlaceTable().slice(0, 8).map(t => t.row.id);
-      const groups = src.slice(2).split("");
-      for (const g of groups) {
-        const s = standings(g);
-        if (s.length < 3) continue;
-        if (qualifiedIds.includes(s[2].id)) return s[2].id;
-      }
-      return null;
-    }
+    if (src.startsWith("3:")) return null; // resolved via seedSlots in data.js
     if ((m = src.match(/^W(\d+)$/))) return winnerOf(Number(m[1]));
     if ((m = src.match(/^L(\d+)$/))) return loserOf(Number(m[1]));
     return null;

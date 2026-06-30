@@ -253,4 +253,5 @@ window.WC_DATA = {
 
   seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],
   seedAssignments: {"MEX":1,"RSA":4,"KOR":2,"CZE":0,"CAN":0,"BIH":4,"QAT":0,"SUI":1,"BRA":4,"MAR":5,"HAI":0,"SCO":2,"USA":3,"PAR":1,"AUS":0,"TUR":2,"GER":3,"CUW":5,"CIV":1,"ECU":3,"NED":5,"JPN":1,"SWE":2,"TUN":4,"BEL":5,"EGY":0,"IRN":0,"NZL":3,"ESP":4,"CPV":3,"KSA":1,"URU":3,"FRA":3,"SEN":2,"IRQ":3,"NOR":1,"ARG":4,"ALG":5,"AUT":4,"JOR":2,"POR":2,"COD":5,"UZB":5,"COL":1,"ENG":5,"CRO":2,"GHA":0,"PAN":4},
+  seedSlots: {74:{a:"PAR"},77:{a:"SWE"},79:{a:"ECU"},80:{a:"COD"},81:{a:"BIH"},82:{a:"SEN"},85:{a:"ALG"},87:{a:"GHA"}},
 };
