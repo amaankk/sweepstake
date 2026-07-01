@@ -9,7 +9,7 @@
   const NUM_PLAYERS = 6;
   const PLAYER_COLORS = ["#e6553f", "#3f8de6", "#41b96b", "#c84fd1", "#e0a330", "#2fb6b0"];
   const ROUND_LABELS = { r32: "Round of 32", r16: "Round of 16", qf: "Quarter-finals", sf: "Semi-finals", third: "Third-place play-off", final: "Final" };
-  const STAGE_POINTS = [["r32", 3], ["r16", 3], ["qf", 3], ["sf", 3], ["final", 3], ["champion", 3]];
+  const STAGE_POINTS = [["r32", 3], ["r16", 3], ["qf", 3], ["sf", 3], ["final", 3], ["champion", 5]];
 
   const TEAMS = {};
   D.teams.forEach(t => (TEAMS[t.id] = t));
@@ -328,7 +328,7 @@
         </div>
       </details>`;
     }).join("") + `</div>
-    <p class="note">Scoring: +1 per win (shootout wins count) · +0.5 per draw (group stage) · +3 per knockout round reached (R32 through Final, cumulative).</p>`;
+    <p class="note">Scoring: +1 per win (shootout wins count) · +0.5 per draw (group stage) · +3 per knockout round reached (R32 through Final) · +5 for winning the World Cup.</p>`;
   }
 
   function isOut(teamId) {
