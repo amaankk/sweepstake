@@ -249,6 +249,13 @@ window.WC_DATA = {
     66: [3,1],  // DR Congo 3-1 Uzbekistan
     71: [0,2],  // Panama 0-2 England
     72: [2,1],  // Croatia 2-1 Ghana
+    // R32
+    73: [0,1],  // South Africa 0-1 Canada
+    74: [1,1,"a"],  // Germany 1-1 Paraguay (Paraguay win pens)
+    75: [1,1,"a"],  // Netherlands 1-1 Morocco (Morocco win pens)
+    76: [2,1],  // Brazil 2-1 Japan
+    77: [3,0],  // France 3-0 Sweden
+    78: [1,2],  // Ivory Coast 1-2 Norway
   },
 
   seedPlayers: ["BK","Kevin","Amaan","Mpacko","Lwazi","Tom"],
